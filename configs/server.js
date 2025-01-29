@@ -26,7 +26,7 @@ const configurarRutas = async(app) => {
 const conectarDB = async () => {
     try {
         await dbConnection();
-        console.log('Conexion exitosa con la base de daots');
+        console.log('Conexion exitosa con la base de datos');
     } catch (error) {
         console.log('Error al conectar con la base de datos', error)
     }

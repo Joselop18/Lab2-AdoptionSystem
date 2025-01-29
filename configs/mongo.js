@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 
 export const dbConnection = async () =>{
     try{
-        mongoose.connect.on('error', ()=> {
+        mongoose.connection.on('error', ()=> {
             console.log('MongoDB | could not be connected to MongoDB');
         });
         mongoose.connection.on('connecting', ()=>{
@@ -22,11 +22,11 @@ export const dbConnection = async () =>{
         mongoose.connection.on('disconnected', ()=>{
             console.log('MongoDB | disconnected');
         });
-        await mongoose.connect(process.env.URI_MONGO, {
+        await mongoose.connect(process.env.URL_MONGO, {
             serverSelectionTimeoutMS: 5000,
             maxPoolSize: 50,
         });
     }catch(error) {
-        console.log('database connection failed, error')
+        console.log('database connection failed, error' + error)
     }
 }
