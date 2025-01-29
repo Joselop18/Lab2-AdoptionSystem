@@ -6,7 +6,6 @@ export const login = async (req, res) => {
     const { correo, password} = req.body;
  
     try {
-       
         const usuario = await Usuario.findOne({ correo});
  
         if (!usuario) {
