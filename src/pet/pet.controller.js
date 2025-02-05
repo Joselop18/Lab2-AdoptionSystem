@@ -74,18 +74,14 @@ export const getPet = async (req, res) =>{
     const { id } = req.params;
 
     try {
-        
         const pet = await Pet.findById(id);
-
         if(!pet){
             return res.status(404).json({
                 success: false,
                 message: 'Mascota no encontrada'
             })
         }
-
         const owner = await User.findById(pet.keeper);
-
         res.status(200).json({
             success: true,
             pet: {
