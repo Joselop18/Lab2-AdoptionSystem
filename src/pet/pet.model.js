@@ -5,7 +5,7 @@ const PetSchema = Schema({
         type: String,
         required: true
     },
-    description:{
+    description: {
         type: String,
         required: true
     },
@@ -26,8 +26,7 @@ const PetSchema = Schema({
     status: {
         type: Boolean,
         default: true
-    },
-
+    }
 }, {
     timestamps: true,
     versionKey: false

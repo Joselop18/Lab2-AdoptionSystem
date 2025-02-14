@@ -1,5 +1,6 @@
-import User from '../users/user.model.js';
-import Pet from './pet.model.js';
+
+import User from '../users/user.model.js'
+import Pet from './pet.model.js'
 
 export const savePet = async (req, res) =>{
     try {
@@ -16,7 +17,7 @@ export const savePet = async (req, res) =>{
 
         const pet = new Pet({
             ...data,
-            keeper: user._ide
+            keeper: user._id
         });
 
         await pet.save();
@@ -36,18 +37,19 @@ export const savePet = async (req, res) =>{
 }
 
 export const getPets = async (req, res) =>{
-    const { limite = 10, desde = 0 } = req.query;
-    const query = { status: true };
+    
+    const { limite = 10, desde = 0} = req.query;
+    const query = { status: true};
 
     try {
+        
+        const pets = await Pet.find(query)
+            .skip(Number(desde))
+            .limit(Number(limite));
 
-        const pets = await Pet.fin(query)
-            .sip(Number(desde))
-            .limit(Number(limte));
-
-        const petWithOwnerNames = await Promise.all(pets.map(async (pet) => {
+        const petsWithOwnerNames = await Promise.all(pets.map(async (pet) =>{
             const owner = await User.findById(pet.keeper);
-            return{
+            return {
                 ...pet.toObject(),
                 keeper: owner ? owner.nombre : "Propietario no encontrado"
             }
@@ -63,25 +65,30 @@ export const getPets = async (req, res) =>{
         
     } catch (error) {
         res.status(500).json({
-            susccess: false,
+            success: false,
             message: 'Error al obtener mascotas',
             error
         })
     }
 }
 
-export const getPet = async (req, res) =>{
+export const searchPet = async (req, res) => {
+    
     const { id } = req.params;
 
     try {
+
         const pet = await Pet.findById(id);
+
         if(!pet){
             return res.status(404).json({
                 success: false,
                 message: 'Mascota no encontrada'
             })
         }
+
         const owner = await User.findById(pet.keeper);
+
         res.status(200).json({
             success: true,
             pet: {
@@ -89,22 +96,29 @@ export const getPet = async (req, res) =>{
                 keeper: owner ? owner.nombre : "Propietario no encontrado"
             }
         })
+
     } catch (error) {
-        res.staus(500).json({
+        res.status(500).json({
             success: false,
             message: 'Error al buscar mascota',
             error
         })
     }
 }
-export const deletePet = async (req, res) =>{
+
+export const deletePet = async (req, res) => {
+
     const { id } = req.params;
+
     try {
+        
         await Pet.findByIdAndUpdate(id, { status: false});
+
         res.status(200).json({
-            success: false,
-            message: 'Pet'
+            success: true,
+            message: 'Pet eliminada exitosamente'
         })
+
     } catch (error) {
         res.status(500).json({
             success: false,
@@ -112,4 +126,5 @@ export const deletePet = async (req, res) =>{
             error
         })
     }
+
 }
