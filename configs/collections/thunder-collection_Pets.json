@@ -1,0 +1,62 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Pets",
+    "collectionId": "66e3ad07-2f81-40d2-b422-aa6ce43f1bd0",
+    "dateExported": "2025-02-10T22:48:17.388Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "6ee3328e-0bab-4fcb-89ff-9a1e1fd41075",
+            "colId": "66e3ad07-2f81-40d2-b422-aa6ce43f1bd0",
+            "containerId": "",
+            "name": "AgregarPet",
+            "url": "http://localhost:3000/adoptionSystem/v1/pets/",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-02-10T22:17:12.947Z",
+            "modified": "2025-02-10T22:38:51.558Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FhNzg2OGQwMmY2Yzg0OTVlYTU3YWYiLCJpYXQiOjE3MzkyMjYyNzIsImV4cCI6MTczOTIyOTg3Mn0.pbOZmwhycPzeje2JbGHsquURCxQhri9jbKkUOEyMbwU"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Max\",\n  \"description\":\"Pug\",\n  \"age\":6,\n  \"type\":\"Perrito\",\n  \"email\":\"example@gmal.com\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "02600e07-f2c1-4cbc-897b-70020cc59fc6",
+            "colId": "66e3ad07-2f81-40d2-b422-aa6ce43f1bd0",
+            "containerId": "",
+            "name": "UpdatePet",
+            "url": "http://localhost:3000/adoptionSystem/v1/pets/67aa7d5dd02f6c8495ea57bd",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2025-02-10T22:28:03.766Z",
+            "modified": "2025-02-10T22:44:22.740Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n        \"name\": \"Maximiliano\",\n      \"description\": \"Pitbull\",\n      \"age\": 5,\n      \"type\": \"PERRO\"\n      \n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "e7f2e5b9-e4c3-4956-a7dc-7d56e36fa63c",
+            "colId": "66e3ad07-2f81-40d2-b422-aa6ce43f1bd0",
+            "containerId": "",
+            "name": "GetPets",
+            "url": "http://localhost:3000/adoptionSystem/v1/pets/",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-02-10T22:29:06.961Z",
+            "modified": "2025-02-10T22:29:11.884Z",
+            "headers": []
+        }
+    ],
+    "ref": "ZL2izSAPnWfOYri4XbKI-lIZLB6pinNiHth2W_mwCU8wYJ7MiU-g0aWpsfU6_nbZ6ySiQCJJScZq1gIv3YJ7bQ"
+}

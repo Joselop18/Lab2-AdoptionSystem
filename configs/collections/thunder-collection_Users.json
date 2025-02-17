@@ -1,0 +1,35 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "Users",
+    "collectionId": "2e6a84c3-29d2-4cde-a98b-79d86b4c4a4d",
+    "dateExported": "2025-02-10T23:04:04.262Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0ff562c4-48f1-4e9b-8afd-deb5ca49f5fd",
+            "colId": "2e6a84c3-29d2-4cde-a98b-79d86b4c4a4d",
+            "containerId": "",
+            "name": "GetUsers",
+            "url": "http://localhost:3000/adoptionSystem/v1/users/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2025-02-10T22:51:49.054Z",
+            "modified": "2025-02-10T22:52:41.734Z",
+            "headers": []
+        },
+        {
+            "_id": "94ab8967-3484-4519-9cb5-ae2feb0f4bcd",
+            "colId": "2e6a84c3-29d2-4cde-a98b-79d86b4c4a4d",
+            "containerId": "",
+            "name": "SearchUser",
+            "url": "http://localhost:3000/adoptionSystem/v1/users/findUser/67aa79a7d02f6c8495ea57b3",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-02-10T22:53:45.167Z",
+            "modified": "2025-02-10T22:59:08.817Z",
+            "headers": []
+        }
+    ],
+    "ref": "IUti7pB-R_ln6o1ARTOaK2hfW1DtLnaGCVNMFSCUsmxaOW1s9gdHKaNjwVxp0zD_gkNmf_haGhnku4ebxK3RUg"
+}
